@@ -4,6 +4,7 @@
     session_start();
     if(isset($_COOKIE['login'])){
         $_SESSION["login"] = true;
+        $_SESSION["username"] = $_COOKIE["username"];
     }
     
     if(!isset($_SESSION["login"])){

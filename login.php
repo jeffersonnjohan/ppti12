@@ -17,6 +17,7 @@
             $_SESSION["username"] = $_POST["username"];
             if($_POST["remember"]){
                 setcookie('login', 'true', time() + 60);
+                setcookie('username', $_POST["username"], time() + 60);
             }
 
             header("Location: index.php");

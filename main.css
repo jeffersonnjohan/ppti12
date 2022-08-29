@@ -24,6 +24,15 @@ body {
     list-style: none;
     text-decoration: none;
 }
+
+button{
+    border: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
 section {
     margin-top: 200px;
 }
@@ -132,7 +141,6 @@ section {
     background: none;
     outline: none;    
     margin-right: 30px;
-    
 }
 
 .menu {
