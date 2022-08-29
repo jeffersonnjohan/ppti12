@@ -26,19 +26,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>PPTI 12</title>
 </head>
 <body>
-    <a href="logout.php">Logout</a>
 
-    <h1>Daftar Nama PPTI 12</h1>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-wrapper">
+                <h1 class="web-title">BLI Students</h1>
 
-    <a href="insert.php">Tambah Mahasiswa Baru</a>
-    <br><br><br>
+                <div class="menu-wrapper">
+                    <ul class="menu">
+                        <li class="menu-item"><a href="#" class="menu-link active">Home</a></li>
+                        <li class="menu-item"><a href="#" class="menu-link">About Us</a></li>
+                        <li class="menu-item"><a href="#" class="menu-link">Feedback</a></li>
+                        <li class="menu-item"><a href="logout.php" class="menu-link">Logout</a></li>
+                    </ul>
+
+                    <div class="profile-info">
+                        <img src="pics/3 profile pic.png" alt="">
+                        <a href="#" class="profile-name">William Suryadharma</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- Search -->
-    <h2>Search:</h2>
-    <form action="" method="post">
+    <form action="" method="post" style="display:none;">
         <label for="nama">Nama: </label>
         <br>
         <input type="text" name="nama" id="nama" placeholder="silakan masukkan nama"">
@@ -112,39 +129,84 @@
         <button type="submit" name="submit" value="submit">Search</button>
     </form>
 
-    <!-- Content -->
-    <br><br>
-    <table border="1" cellspacing="0" cellpadding="10">
-        <tr>
-            <th>No</th>
-            <th>Aksi</th>
-            <th>Nama</th>
-            <th>Asal</th>
-            <th>DOB</th>
-            <th>Agama</th>
-        </tr>
-        <?php $counter = 1 ?>
-        <?php foreach($students as $student): ?>
-        <tr>
-            <td><?php echo $counter++; ?></td>
-            <td>
-                <a href="edit.php?id=<?php echo $student["id"]?>">edit</a>
-                <a href="delete.php?id=<?php echo $student["id"]?>">delete</a>
-            </td>
-            <td>
-                <?php echo $student["nama"] ?>
-            </td>
-            <td>
-            <?php echo $student["asal"] ?>
-            </td>
-            <td>
-                <?php echo $student["DOB"] ?>
-            </td>
-            <td>
-                <?php echo $student["agama"] ?>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
+    <section class="ppti-database">
+        <!-- Heading Section: PPTI Database & Search Bar -->
+        <div class="heading">
+            <h1 class="title">PPTI Database</h1>
+            <div class="search-bar">
+                <img src="pics/1 search bar.png" alt="" class="img1">
+                <input type="text" class="search-input" placeholder="Search for students">
+                <div class="button">
+                    <button onclick="changeBackground()" class="button-img2"> <img src="pics/2 option bar svg.svg" alt=""> </button>
+                </div>
+
+                <script type="text/javascript">
+                    function changeBackground(){
+                        document.querySelector('.box').style.background
+                    }
+                </script>
+
+            </div>
+        </div>
+
+        <div class="menu">
+            <a href="insert.php" class="add-student">
+                <img src="pics/4 add student svg.svg" alt="">
+                <div class="text">Add Student</div>
+            </a>
+
+            <a href="#" class="edit-student" id="edit-student">
+                <img src="pics/5 edit student svg.svg" alt="">
+                <div class="text">Edit Student</div>
+            </a>
+        </div>
+
+        <!-- Content -->
+        <div class="table">
+            <table class="content-table">
+                <div class="heading-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th class="editDisplay displayNone">Aksi</th>
+                            <th>Nama</th>
+                            <th>Asal</th>
+                            <th>DOB</th>
+                            <th>Agama</th>
+                        </tr>
+                    </thead>
+                </div>
+    
+                <tbody>
+                    <?php $counter = 1 ?>
+                    <?php foreach($students as $student): ?>
+                    <tr>
+                        <td><?php echo $counter++; ?></td>
+                        <td class="editDisplay displayNone">
+                            <a href="edit.php?id=<?php echo $student["id"]?>">edit</a>
+                            <a href="delete.php?id=<?php echo $student["id"]?>">delete</a>
+                        </td>
+                        <td>
+                            <?php echo $student["nama"] ?>
+                        </td>
+                        <td>
+                        <?php echo $student["asal"] ?>
+                        </td>
+                        <td>
+                            <?php echo $student["DOB"] ?>
+                        </td>
+                        <td>
+                            <?php echo $student["agama"] ?>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="free-section"></div>
+    </section>
+
+    <script src="scriptIndex.js"></script>
 </body>
 </html>

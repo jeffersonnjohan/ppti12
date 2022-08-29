@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --black-color       : #222222;
+    --darkgreen-color   : #1B9449;
+    --whitegreen-color  : #F2F9F7;
+    --darkgrey-color    : #A0A1A8;
+    --whitegrey-color   : #F5F5F5;
+    --table-color       : #5E6C8B;
+    --body-color        : #FAFAFA;
+
+    --main-font: 'Poppins';
+}
+body {
+    background-color: var(--body-color);
+    font-family: var(--main-font);
+    overflow-x: hidden;
+    min-height: 100%;
+}
+* { 
+    margin: auto;
+    padding: auto;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+section {
+    margin-top: 200px;
+}
+.container {
+    max-width: 2000px;
+}
+
+/* navigation bar section */
+.navbar{
+    width: 100%;
+    height: 100px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    color: #ffff;
+    background-color: var(--black-color);
+}
+.web-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+}
+.navbar .nav-wrapper {
+    padding-top: 3px;
+    color: white;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-wrapper .menu-wrapper {
+    display: flex;
+    gap: 50px;
+}
+.nav-wrapper .menu-wrapper .menu {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+.menu-wrapper .menu .menu-link {
+    font-size: 20px;
+    color: #fff;
+    font-family: var(--main-font);
+    font-weight: 300;
+}
+.menu-wrapper .menu .menu-link.active {
+    font-weight: 550;
+    color: #fff;
+}
+.profile-info {
+    margin-left: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+.profile-info .profile-name {
+    font-family: #fff;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 300;
+    background-color: var(--second-color);
+    padding: 10px 25px;
+    border-radius: 15px;
+}
+
+/* ppti database section */
+.ppti-database .heading {
+    display: flex;
+}
+.heading .title{
+    position: absolute;
+    width: 354px;
+    height: 72px;
+    left: 116px;
+    top: 150px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    color: var(--black-color);
+}
+.heading .search-bar {
+    position: absolute;
+    width: 370px;
+    height: 45px;
+    left: 955px;
+    top: 163px;
+    background-color: var(--whitegrey-color);
+    border-radius: 15px;
+    justify-content: space-between;
+    display: flex;
+}
+.search-bar .img1 {
+    margin-left: 30px;
+}
+.search-bar .search-input {
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--darkgrey-color);
+    border: none;
+    background: none;
+    outline: none;
+}
+.search-bar .button { 
+    border: none;
+    background: none;
+    outline: none;    
+    margin-right: 30px;
+    
+}
+
+.menu {
+    height: 100px;
+}
+.menu .add-student {
+    position: absolute;
+    width: 175px;
+    height: 40px;
+    left: 955px;
+    top: 264px;
+    border: 1px solid var(--darkgreen-color);
+    border-radius: 15px;
+    display: flex;
+}
+.add-student .text {
+    font-weight: 300;
+    font-size: 20px;
+    color: var(--darkgreen-color);
+}
+.menu .edit-student {
+    position: absolute;
+    width: 175px;
+    height: 40px;
+    left: 1150px;
+    top: 264px;
+    border: 1px solid var(--darkgreen-color);
+    border-radius: 15px;
+    display: flex;
+    color: var(--darkgreen-color);
+}
+
+.edit-student.active{
+    background-color: #1B9449;
+    color: white;
+}
+
+.edit-student .text {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+/* table section */
+.table {
+    border: 1px solid #878E97;
+    border-radius: 25px;
+    position: absolute;
+    width: 1209px;
+    left: 116px;
+    top: 368px;
+}
+.content-table {
+    width: 1205px;
+    height: auto;
+    border-collapse: collapse;
+    margin: 0;
+    min-width: 400px;
+    border-radius: 25px 25px 25px 25px;
+    overflow: hidden;
+}
+.table .heading-table{
+    background-color: black;
+    font-weight: 600;
+    font-size: 24px;
+}
+.content-table thead tr {
+    background-color: white;
+    color: var(--black-color);
+    text-align: left;
+    font-weight: 600;
+    font-size: 24px;
+}
+.content-table th, .content-table td {
+    padding: 20px 20px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--table-color);
+}
+/* .content-table tbody tr {
+    padding-left: 500px;
+} */
+.content-table tbody tr:nth-of-type(odd) {
+    background-color: var(--whitegreen-color);
+}
+.free-section {
+    height: 75px;
+}
+
+/* search menu */
+.search-menu {
+    /* display: none; */
+    position: absolute;
+    width: 467px;
+    height: 611px;
+    left: 856px;
+    top: 208px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #CCCCCC;
+    box-shadow: 1px 5px 4px 2px rgba(0, 0, 0, 0.25);
+}
+.search-menu .menu-options {
+    margin-left: 50px;
+    margin-top: 40px;
+    height: 100px;
+    width: 100px;
+}
+.options-nama .nama, .options-nama- .nama {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 36px;
+}
+.options-nama- {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+/* search students */
+.s-input {
+    width: 350px;
+    height: 40px;
+    margin-top: 15px;
+    background: #F5F5F5;
+    border-radius: 15px;
+}
+.s-input .input {
+    margin-left: 30px;
+    margin-top: 3.5px;
+    border: none;
+    background: none;
+    outline: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+}
+.any {
+    font-weight: 300;
+    font-size: 20px;
+    background: #F5F5F5;
+}
+
+.s-input .input-dob, 
+.s-input .input-religion {
+    margin-left: 30px;
+    margin-top: 3.5px;
+    border: none;
+    background: none;
+    outline: none;
+    font-weight: 300;
+    font-size: 20px;
+    background: #F5F5F5;
+}
+
+.search-menu .menu-submit {
+    width: 350px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.menu-submit .input-search {
+    margin-left: 0;
+    border: none;
+    background: none;
+    outline: none;
+    width: 150px;
+    height: 45px;
+    background: #1B9449;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    color: #FFFFFF;
+}
+.menu-submit .input-reset {
+    margin-left: 0;
+    border: none;
+    background: none;
+    outline: none;
+    width: 150px;
+    height: 45px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    color: #A0A1A8;
+}
+
+.displayNone{
+    display: none;
+}
