@@ -14,6 +14,7 @@
     if(isset($_POST["submit"])){
         if(login($_POST)){
             $_SESSION["login"] = true;
+            $_SESSION["username"] = $_POST["username"];
             if($_POST["remember"]){
                 setcookie('login', 'true', time() + 60);
             }

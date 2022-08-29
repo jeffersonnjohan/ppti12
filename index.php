@@ -5,12 +5,13 @@
     if(isset($_COOKIE['login'])){
         $_SESSION["login"] = true;
     }
-
+    
     if(!isset($_SESSION["login"])){
         // Kalau belum login
         header("Location: login.php");
     }
-
+    $username = $_SESSION["username"];
+    
     $students = query("SELECT id, nama, asal, DATE_FORMAT(DOB, '%d %M %Y') as 'DOB', agama FROM mahasiswa");
     $cities = query("SELECT DISTINCT asal from mahasiswa");
 
@@ -47,7 +48,7 @@
 
                     <div class="profile-info">
                         <img src="pics/3 profile pic.png" alt="">
-                        <a href="#" class="profile-name">William Suryadharma</a>
+                        <a href="#" class="profile-name"><?php echo $username;?></a>
                     </div>
                 </div>
             </div>
