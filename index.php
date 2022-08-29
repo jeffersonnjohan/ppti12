@@ -137,14 +137,8 @@
                 <img src="pics/1 search bar.png" alt="" class="img1">
                 <input type="text" class="search-input" placeholder="Search for students">
                 <div class="button">
-                    <button onclick="changeBackground()" class="button-img2"> <img src="pics/2 option bar svg.svg" alt=""> </button>
+                    <button class="button-img2"> <img src="pics/2 option bar svg.svg" alt=""> </button>
                 </div>
-
-                <script type="text/javascript">
-                    function changeBackground(){
-                        document.querySelector('.box').style.background
-                    }
-                </script>
 
             </div>
         </div>
@@ -206,6 +200,63 @@
     
         <div class="free-section"></div>
     </section>
+
+    <div class="search-menu displayNone" id="search-menu">
+        <form action="" method="post">
+            <div class="menu-options">
+
+                <div class="options-nama">
+                    <label for="nama" class="nama">Nama</label>
+                    <div class="s-input">
+                        <input type="text" class="input" id="input" placeholder="Input your name here">
+                    </div>
+                </div>
+
+                <div class="options-nama-">
+                    <label for="nama" class="nama">Asal</label>
+                    <div class="s-input">
+                        <select name="asal" id="asal" class="input">
+                            <option value="any" class="any">Choose your origin</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="options-nama-">
+                    <label for="nama" class="nama">DOB</label>
+                    <div class="s-input">
+
+                        
+                        <select name="tanggal" id="tanggal" class="input-dob">
+                            <option value="-1" class="any">Day</option>
+                        </select>
+
+                        <select name="bulan" id="bulan" class="input-dob">
+                            <option value="-1" class="any">Month</option>
+                        </select>
+                        
+                        <select name="tahun" id="tahun" class="input-dob">
+                            <option value="-1" class="any">Year</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="options-nama-">
+                    <label for="nama" class="nama">Agama</label>
+                    <div class="s-input">
+                        <select name="agama" id="agama" class="input-religion">
+                            <option value="any" class="any">Choose religion</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <div class="menu-submit">
+                    <button type="reset" class="input-reset"> <center>Reset</center> </button>
+                    <button type="submit" name="submit" value="submit" class="input-search"> <center>Search</center> </button>  
+                </div>
+            </div>
+        </form>
+    </div>
 
     <script src="scriptIndex.js"></script>
 </body>
