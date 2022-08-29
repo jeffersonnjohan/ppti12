@@ -80,7 +80,7 @@
             <option value="-1">Any</option>
             <?php for($i = 1; $i <= 31; $i++): ?>
                 <option value="<?php printf("%02d", $i)?>"><?php echo $i; ?></option>
-                <?php endfor; ?>
+            <?php endfor; ?>
         </select>
             Bulan
         <select name="bulan" id="bulan">
@@ -90,7 +90,7 @@
                     
                     <?php echo $month; ?>
                 </option>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
         </select>
         
         Tahun
@@ -208,44 +208,65 @@
                 <div class="options-nama">
                     <label for="nama" class="nama">Nama</label>
                     <div class="s-input">
-                        <input type="text" class="input" id="input" placeholder="Input your name here">
+                        <input type="text" name="nama" id="nama" class="input" placeholder="Input your name here">
                     </div>
                 </div>
 
                 <div class="options-nama-">
-                    <label for="nama" class="nama">Asal</label>
+                    <label for="asal" class="nama">Asal</label>
                     <div class="s-input">
                         <select name="asal" id="asal" class="input">
                             <option value="any" class="any">Choose your origin</option>
+                            <?php foreach($cities as $city): ?>
+                                <option value="<?php echo $city["asal"];?>">
+                                    <?php echo $city["asal"]; ?>
+                                </option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
 
                 <div class="options-nama-">
-                    <label for="nama" class="nama">DOB</label>
+                    <label for="tanggal" class="nama">DOB</label>
                     <div class="s-input">
 
                         
                         <select name="tanggal" id="tanggal" class="input-dob">
                             <option value="-1" class="any">Day</option>
+                            <?php for($i = 1; $i <= 31; $i++): ?>
+                                <option value="<?php printf("%02d", $i)?>"><?php echo $i; ?></option>
+                            <?php endfor; ?>
                         </select>
 
                         <select name="bulan" id="bulan" class="input-dob">
                             <option value="-1" class="any">Month</option>
+                            <?php $i = 1; foreach($months as $month): ?>
+                                <option value="<?php printf("%02d", $i++)?>">
+                                    <?php echo $month; ?>
+                                </option>
+                            <?php endforeach; ?>
                         </select>
                         
                         <select name="tahun" id="tahun" class="input-dob">
                             <option value="-1" class="any">Year</option>
+                            <?php for($yearCounter = 1980; $yearCounter <= 2022; $yearCounter++): ?>
+                                <option value="<?php echo $yearCounter;?>">
+                                <?php echo $yearCounter; ?>
+                                </option>
+                            <?php endfor; ?>
                         </select>
 
                     </div>
                 </div>
 
                 <div class="options-nama-">
-                    <label for="nama" class="nama">Agama</label>
+                    <label for="agama" class="nama">Agama</label>
                     <div class="s-input">
                         <select name="agama" id="agama" class="input-religion">
                             <option value="any" class="any">Choose religion</option>
+                            <?php foreach($religions as $religion): ?>
+                                <option value="<?php echo $religion; ?>"><?php echo $religion; ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
