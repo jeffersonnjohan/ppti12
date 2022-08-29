@@ -1,9 +1,9 @@
 <?php 
     require 'functions.php';
     session_start();
-    if(!isset($_SESSION["login"])){
-        // Kalau belum login
-        header("Location: login.php");
+    if(isset($_SESSION["login"])){
+        // Kalau sudah login
+        header("Location: index.php");
     }
 
     if(isset($_POST["submit"])){
@@ -11,6 +11,7 @@
             echo "
                 <script>
                     alert('data berhasil ditambahkan')
+                    document.location.href = 'index.php'
                 </script>
             ";
         } else{
